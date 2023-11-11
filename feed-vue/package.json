@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "rss-parser": "^3.13.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {

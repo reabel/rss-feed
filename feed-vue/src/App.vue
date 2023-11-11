@@ -1,14 +1,15 @@
-<script setup lang="ts">
+<script setup>
   import { onMounted, ref } from 'vue';
-  import Parser from 'rss-parser';
+  import { praseRSS } from 'utils';
+  const parser = new Parser();
   const rssItems = ref();
   const fetchRssFeed = async () => {
     console.log('parsing');
-    //const parser = new Parser();
-    //const feed = await parser.parseURL('https://www.reddit.com/.rss'); // Replace with your RSS feed URL
+    
+  const feed = await parser.parseURL('https://www.reddit.com/.rss'); // Replace with your RSS feed URL
     //Update the component data with the fetched items
     //console.log('items', feed);
-    //rssItems.value = feed.items;
+    rssItems.value = feed.items;
     rssItems.value = [{ title: 'test', contentSnippet: 'Lorem Ipsum'}]
   };
 
